@@ -6,6 +6,9 @@ let clicked;
 let tile;
 let win = false;
 
+let CntWx=0;
+let CntWo=0;
+
 
 window.onload = function() {
     setGame();
@@ -216,10 +219,19 @@ function winArray(array, symbol) {
         if (element) {
             if(symbol == 'O'){
                 element.innerHTML = '<img src="circleWin.png" height="48px" width="48px">';
+                
             }else{
                 element.innerHTML = '<img src="crossWin.png" height="48px" width="48px">';
+                
             }
             
         }
+    }
+    if(symbol == 'O'){
+        CntWo +=1;
+        document.getElementById('O').innerHTML = "O: " + CntWo;
+    }else{
+        CntWx +=1;
+        document.getElementById('X').innerHTML = "X: " + CntWx;
     }
 }
